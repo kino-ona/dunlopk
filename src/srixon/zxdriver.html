@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<!-- page head inc -->
+	@@include('./inc/pagehead.inc',{
+	})
+	<!--// page head inc -->
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
+</head>
+
+<body class="s-homepage" style="overflow-x:visible;">
+	<div id="wrapper">
+		<!-- header inc -->
+		@@include('./inc/header.inc',{
+		})
+		<!--// header inc -->
+
+
+		<!-- contents -->
+		<link href='./images/zx/zx.css' rel='stylesheet' type='text/css'>
+		<style>
+		</style>
+		<div class="content_box zx_contents">
+			<div class="section zx_page1">
+				<div class="main-visual-container">
+					<div class="visual">
+						<video width="100%" height="100%" autoplay="" muted="" playsinline="" loop="" poster="./images/zx/@vod.jpg"
+							src="./images/zx/intro_movie.mp4"></video>
+					</div>
+				</div>
+			</div>
+			<div class="section _scroll zx_page2">
+				<div class="row">
+					<div class="bg_visual">
+						<div class="box">
+							<p class="animate zoomIn"><img src="./images/zx/zx_page2-text01.png" alt="ZX5 Driver"></p>
+							<p class="animate zoomIn"><img src="./images/zx/zx_page2-text02.png" alt="ZX7 Driver"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section zx_page3">
+				<div class="row">
+					<div class="area01 _scroll">
+						<p class="fig animate zoomIn"><img src="./images/zx/zx_page3-cont01.png" alt="ZX"></p>
+						<p class="animate"><img src="./images/zx/zx_page3-text01.png" alt="Rebound Frame"></p>
+						<p class="text">기존 클럽의 비거리 프레임을 깨고<br>역발상적인 기술력으로 이뤄낸 <span class="yellow">압도적 볼 스피드</span></p>
+					</div>
+					<div class="area area02">
+						<div class="half _left">
+							<dl class="txtdl">
+								<dt><p class="tag">REBOUND FRAME</p><p>페이스에서 강하게<br>바디에서 더 강하게</p></dt>
+								<dd>
+									<p>듀얼 플렉스 존이 만들어 내는 압도적 볼 스피드</p>
+									두 개의 FLEX ZONE으로 이뤄진 <strong>리바운드 프레임</strong>은<br>임팩트 시 두 번에 걸쳐 볼을 응축시켜<br>더욱 빠른 볼스피드로 믿을 수 없는<br>비거리를 제공합니다.
+								</dd>
+							</dl>
+						</div>
+						<div class="half _right _scroll">
+							<p class="txt01 animate slideToLeft"><img src="./images/zx/zx_page3-cont02_01.png" alt="FLEX ZONE #1"></p>
+							<p class="txt02 animate slideToRight"><img src="./images/zx/zx_page3-cont02_02.png" alt="FLEX ZONE #2"></p>
+							<p class="fig"><img src="./images/zx/zx_page3-cont02.png" alt="ZX"></p>
+						</div>
+					</div>
+					<div class="area area03">
+						<div class="half _left">
+							<p class="fig"><img src="./images/zx/zx_page3-cont03.png" alt="ZX"></p>
+						</div>
+						<div class="half _right">
+							<dl class="txtdl">
+								<dt><p class="tag">REBOUND FRAME</p><p>한 번의 스윙<br>두 번의 임팩트</p></dt>
+								<dd>
+									임팩트 시 헤드가 변형되는 부분을 페이스부터<br>바디 앞부분까지 확장 설계하여 휘어지는 부분을 더 크게<br>더 깊게 만들어내 반발 성능이 향상되었습니다.<br>
+									볼 스피드 비교 테스트 결과만으로도 압도적인 차이를<br>확인 할 수 있습니다.
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="area area04">
+						<div class="half _left _scroll">
+							<p class="txt01 animate slideToLeft"><img src="./images/zx/zx_page3-cont04_01.png" alt="FLEX ZONE #1"></p>
+							<p class="fig"><img src="./images/zx/zx_page3-cont04.png" alt="ZX"></p>
+						</div>
+						<div class="half _right _scroll">
+							<p class="txt01 animate slideToLeft"><img src="./images/zx/zx_page3-cont05_01.png" alt="FLEX ZONE #1"></p>
+							<p class="fig"><img src="./images/zx/zx_page3-cont05.png" alt="ZX"></p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!--// contents -->
+
+
+		<!-- footer inc -->
+		@@include('./inc/footer.inc',{
+		})
+
+		<script>
+			var lastSt = 0;
+			$(window).scroll(function (e) {
+				var st = $(this).scrollTop();
+				winH = $(window).height();
+				docH = $(document).height();
+
+				$('._scroll').each(function(){
+					var secTop = $(this).offset().top / 2.3;
+
+					if (secTop < st) {
+						$(this).addClass('is-active')
+					}
+					if (st < 100) {
+						$(this).removeClass('is-active')
+					}
+				});
+			});
+
+		</script>
+		<script>
+			/* menu */
+			var navi_onoff = true;
+			var navi = $('#header'),
+				body = $('html,body');
+			$(window).on('scroll mousewheel DOMMouseScroll', function (e) {
+
+				var main_arrow = false;
+				var delta = e.originalEvent.wheelDelta;
+				clearTimeout($.data(this, "scrollCheck"));
+				if (!navi.is(':animated')) {
+					if (delta < 0) {
+						navi.animate({
+							top: '-100%'
+						}, 'easeInOutQuart');
+						$('.content_box').animate({
+							'margin-top': '0'
+						}, 'easeInOutQuart');
+						$('.brave_menu').animate({
+							top: '50px'
+						}, 'easeInOutQuart');
+
+						navi_onoff = false;
+					} else if (delta > 0) {
+						main_arrow = true;
+						navi.animate({
+							top: 0
+						}, 'easeInOutQuart');
+
+						$('.content_box').animate({
+							'margin-top': '120px'
+						}, 'easeInOutQuart');
+
+						$('.brave_menu').animate({
+							top: '170px'
+						}, 'easeInOutQuart');
+
+						navi_onoff = true;
+					}
+				}
+			});
+		</script>
+		<script src="https://www.srixon.co.kr/images/brave_v2/sly.min.js"></script>
+		<!--// footer inc -->
+
+	</div>
+</body>
+
+</html>
