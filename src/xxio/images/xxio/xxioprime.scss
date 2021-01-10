@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+.xxiop_content {
+  padding-top:80px;
+}
+.xxio_sec {
+	width: 100%;
+	margin: 0 auto;
+}
+.xxio_sec1 {
+  .visual {
+    position:relative;
+    width:100%;
+    padding-bottom:46.8%;
+    max-height:900px;
+    overflow: hidden;
+    background: {
+      color:#000;
+      repeat: no-repeat;
+      position:center center;
+      size:cover;
+    }
+  }
+  video, iframe {
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:100%;
+    -webkit-transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);  
+  }
+  iframe {
+    height:100%;
+  }
+}
