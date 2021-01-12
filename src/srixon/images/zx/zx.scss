@@ -180,6 +180,17 @@
 	}
 }
 // zx_contents
+.zx_page0 {
+	background: {
+		repeat: no-repeat;
+		position:center bottom;
+		size:cover;
+	}
+	.row {
+		padding-top:120px;
+		text-align: center;
+	}
+}
 .zx_page2 {
 	background-color:#000;
 	background: {
@@ -1152,6 +1163,16 @@
 					width:5px;
 					height:5px;
 				}
+			}
+		}
+	}
+	.zx_page0 {
+		.row {
+			padding-top:50px;
+			padding-right:0;
+			max-width:100%;
+			.t1 {
+				text-align: right;
 			}
 		}
 	}
