@@ -1243,6 +1243,7 @@
 		}
 	}
 	.zx_page0 {
+		height:100vh;
 		.row {
 			padding-top:50px;
 			padding-right:0;
@@ -1252,6 +1253,12 @@
 			}
 		}
 	}
+	.zx_page01 {
+		img {
+			visibility: visible;
+		}
+	}
+
 } // @media (max-width: 1024px) 
 @media (max-width: 767px) {
 	.zx_page3 {
