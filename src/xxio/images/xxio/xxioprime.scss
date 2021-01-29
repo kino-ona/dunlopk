@@ -208,7 +208,9 @@
 	}
 }
 .xxio_sec01 {
-	margin-top:-8px;
+	// margin-top:-8px;
+	position: relative;
+	z-index: 1;
 	padding-bottom:120px;
 	background: {
 		color:#000;
@@ -437,13 +439,14 @@
 	.xxio_sec0 {
 		.row {
 			height:540px;
-			background-position:center top 40px;
-			background-size:295px;
+			background-position:center top 54px;
+			background-size:90%;
+			margin-bottom:-3px;
 			> p {
 				right:inherit;
 				left:50%;
 				top:inherit;
-				bottom:55px;
+				bottom:30px;
 				-webkit-transform: translate(-50%, 0); 
 				transform: translate(-50%, 0);  
 				width:100%;
@@ -460,7 +463,8 @@
 		}
 	}
 	.xxio_sec01 {
-		margin-top:-5px;
+		// margin-top:-5px;
+		padding-bottom:40px;
 		.head_tit {
 			padding-top:50px;
 			padding-bottom:40px;
